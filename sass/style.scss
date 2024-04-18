@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+}
+
+:root {
+	--clr-bright-orange: hsl(31, 77%, 52%);
+	--clr-dark-cyan: hsl(184, 100%, 22%);
+	--clr-very-dark-cyan: hsl(179, 100%, 13%);
+	--clr-white: hsla(0, 0%, 100%, 0.75);
+	--very-light-gray: hsl(0, 0%, 95%);
+
+	--ff-body: 'Lexend Deca', sans-serif;
+	--ff-title: 'Big Shoulders Display', sans-serif;
+}
+
+button {
+	font-family: inherit;
+	font-size: inherit;
+}
+
+img {
+	display: block;
+	max-width: 100%;
+}
+
+body {
+	font-size: 0.9375rem;
+	font-family: var(--ff-body);
+	background-color: var(--very-light-gray);
+}
+
+.box {
+	margin: 2em;
+}
+
+.box__column {
+	padding: 3em;
+}
+
+.box__column--sedan {
+	background-color: var(--clr-bright-orange);
+	border-top-left-radius: 10px;
+	border-top-right-radius: 10px;
+}
+
+.box__column--suv {
+	background-color: var(--clr-dark-cyan);
+}
+
+.box__column--luxury {
+	background-color: var(--clr-very-dark-cyan);
+	border-bottom-left-radius: 10px;
+	border-bottom-right-radius: 10px;
+}
+
+.box__title {
+	padding: 0.75em 0;
+	font-family: var(--ff-title);
+	font-size: 2.5rem;
+	font-weight: 700;
+	color: var(--very-light-gray);
+	text-transform: uppercase;
+}
+
+.box__text {
+	color: var(--clr-white);
+	max-width: 50ch;
+	line-height: 1.75;
+}
+
+.box__btn {
+	margin-top: 2em;
+	padding: 0.85em 1.85em;
+	background-color: var(--very-light-gray);
+	border: 2px solid transparent;
+	border-radius: 25px;
+	cursor: pointer;
+	mix-blend-mode: screen;
+}
+
+@media (min-width: 48rem) {
+	.wrapper {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100vh;
+	}
+
+	.box {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		max-width: 60rem;
+	}
+
+	.box__column--sedan {
+		border-radius: 0;
+		border-bottom-left-radius: 10px;
+		border-top-left-radius: 10px;
+	}
+
+	.box__column--luxury {
+		border-radius: 0;
+		border-top-right-radius: 10px;
+		border-bottom-right-radius: 10px;
+	}
+
+	.box__column {
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+	}
+
+	.box__text {
+		margin-bottom: 5em;
+	}
+
+	.box__btn {
+		margin-top: auto;
+	}
+
+	.box__btn:hover {
+		color: var(--very-light-gray);
+		background-color: transparent;
+		border: 2px solid var(--very-light-gray);
+	}
+}
